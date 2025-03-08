@@ -40,7 +40,7 @@
 
                     <div class="form-check mb-3">
                         <input class="form-check-input" type="checkbox" id="check_sum" name="check_sum" checked>
-                        <label class="form-check-label" for="check_sum">Soma</label>
+                        <label class="form-check-label" for="check_sum">Adição</label>
                     </div>
 
                     <div class="form-check mb-3">
