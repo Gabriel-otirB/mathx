@@ -13,7 +13,7 @@ class MainController extends Controller
         return view('home');
     }
 
-    public function generateExercises(Request $request)
+    public function generateExercises(Request $request): View
     {
         // form validation
         $request->validate([
@@ -67,7 +67,7 @@ class MainController extends Controller
                 case 'division':
 
                     // avoid division by zero
-                    if($number2 === 0) $number2 = 1;
+                    if ($number2 === 0) $number2 = 1;
 
                     $exercise = "$number1 / $number2 =";
                     $solution = $number1 / $number2;
@@ -75,7 +75,7 @@ class MainController extends Controller
             }
 
             // if $solution is a float number, round it to 2 decimal places
-            if(is_float($solution)) $solution = round($solution, 2);
+            if (is_float($solution)) $solution = round($solution, 2);
 
             $exercises[] = [
                 'operation' => $operation,
@@ -85,7 +85,7 @@ class MainController extends Controller
             ];
         }
 
-        dd($exercises);
+        return view('operations', ['exercises' => $exercises]);
     }
 
     public function printExercises()
