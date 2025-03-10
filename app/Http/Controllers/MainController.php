@@ -65,7 +65,6 @@ class MainController extends Controller
                     $solution = $number1 * $number2;
                     break;
                 case 'division':
-
                     // avoid division by zero
                     if ($number2 === 0) $number2 = 1;
 
