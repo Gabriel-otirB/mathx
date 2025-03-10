@@ -1,20 +1,5 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ env('APP_NAME') }}</title>
-    <!-- favicon -->
-    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" type="image/png">
-    <!-- bootstrap -->
-    <link rel="stylesheet" href="{{ asset('assets/bootstrap/bootstrap.min.css') }}">
-    <!-- main css -->
-    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
-</head>
-
-<body>
-
+@extends('layouts.main_layout')
+@section('content')
     <!-- logo -->
     <div class="text-center my-3">
         <img src="{{ asset('assets/images/logo.jpg') }}" alt="logo" class="img-fluid">
@@ -56,8 +41,7 @@
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="check_division" name="check_division"
-                            checked>
+                        <input class="form-check-input" type="checkbox" id="check_division" name="check_division" checked>
                         <label class="form-check-label" for="check_division">Divisão</label>
                     </div>
 
@@ -106,23 +90,14 @@
     </form>
 
     {{-- validation error --}}
-    @if($errors->any())
+    @if ($errors->any())
         <div class="container">
             <div class="row">
                 <div class="alert alert-danger text-center mt-3">
-                    Por favor selecione pelomenos uma operação. As parcelas devem ser números entre 0 e 999. O número de exercícios deve variar entre 5 e 50.
+                    Por favor selecione pelomenos uma operação. As parcelas devem ser números entre 0 e 999. O número de
+                    exercícios deve variar entre 5 e 50.
                 </div>
             </div>
         </div>
     @endif
-
-    <!-- footer -->
-    <footer class="text-center mt-5">
-        <p class="text-secondary">MathX &copy; <span class="text-info">{{ date('Y') }}</span></p>
-    </footer>
-
-    <!-- bootstrap -->
-    <script src="{{ asset('assets/bootstrap/bootstrap.bundle.min.js') }}"></script>
-</body>
-
-</html>
+@endsection
